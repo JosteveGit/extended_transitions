@@ -1,6 +1,6 @@
 name: extended_transitions
 description: A package with new transitions for animations
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/JosteveGit/extended_transitions
 
 environment:
