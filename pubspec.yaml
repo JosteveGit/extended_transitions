@@ -1,7 +1,7 @@
 name: extended_transitions
 description: A package with new transitions for animations
-version: 0.0.3
-homepage: https://github.com/JosteveGit/extented_transitions
+version: 0.0.4
+homepage: https://github.com/JosteveGit/extended_transitions
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
