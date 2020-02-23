@@ -1,7 +1,6 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_package/coulped_transition.dart';
 
 /// A class used to specify the [Tween], [Duration] and [Curve] for an animation
 ///
