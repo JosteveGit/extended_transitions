@@ -29,8 +29,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-	  theme: ThemeData(primarySwatch: Colors.blue),
-	  home: HomePage());
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomePage(),
+    );
   }
 }
 
@@ -50,37 +53,44 @@ class _HomePageState extends State<HomePage> {
           child: Center(
             child: Container(
               width: MediaQuery.of(context).size.width,
-			  height: 50,
-			  margin: EdgeInsets.symmetric(horizontal: 10),
-			  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
-			  child: Center(
+              height: 50,
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+              child: Center(
                   child: Text(
-	                "Lesser codes...Better animations",
-				  style: TextStyle(
+                "Lesser codes...Better animations",
+                style: TextStyle(
                     color: Colors.white,
-				  fontSize: 20,
-				  fontWeight: FontWeight.bold),
-				  overflow: TextOverflow.clip)
-			  ),
-		      decoration: BoxDecoration(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+                overflow: TextOverflow.clip,
+              )),
+              decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [Colors.blue, Colors.red]),
-				  borderRadius: BorderRadius.circular(4)),
-			  ),),
-		      build: (CoupledTransitionController controller) {
-	            this.controller = controller;},
-			  useCommonController: true,
-			  commonDuration: Duration(seconds: 3),
-			  rotationAnimation:  Transition(tween: Tween(begin: 1, end: 4), curve: Curves.ease),
-			  slideAnimation:  Transition(tween: Tween(begin: Offset(2, 0), end: Offset.zero)),),
-  ),
-	  floatingActionButton: FloatingActionButton(
-	        onPressed: () {
-	          controller.startAll();
-			  controller.repeatAll(reverse: true);
-			},
-	  ),);
-	  }
-	}
+                  borderRadius: BorderRadius.circular(4)),
+            ),
+          ),
+          build: (CoupledTransitionController controller) {
+            this.controller = controller;
+          },
+          useCommonController: true,
+          commonDuration: Duration(seconds: 3),
+          rotationAnimation:
+              Transition(tween: Tween(begin: 1, end: 4), curve: Curves.ease),
+          slideAnimation:
+              Transition(tween: Tween(begin: Offset(2, 0), end: Offset.zero)),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          controller.startAll();
+          controller.repeatAll(reverse: true);
+        },
+      ),
+    );
+  }
+}
+
 ```
 
 ## Contributors
