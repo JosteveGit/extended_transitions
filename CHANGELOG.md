@@ -13,3 +13,10 @@ Naming issues fixed
 READMe.md updated
   * Includes `CoupledTransition` - A widget that can handle multiple transitions on its child simultaneously
 
+## 0.0.4
+url updated
+  * Includes `CoupledTransition` - A widget that can handle multiple transitions on its child simultaneously
+
+## 0.0.5
+SingleTickerStateMixin updated
+  * Includes `CoupledTransition` - A widget that can handle multiple transitions on its child simultaneously
