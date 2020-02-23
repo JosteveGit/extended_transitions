@@ -137,7 +137,7 @@ class CoupledTransition extends StatefulWidget {
 }
 
 class _CoupledTransitionState extends State<CoupledTransition>
-    with SingleTickerProviderStateMixin
+    with TickerProviderStateMixin
     implements CoupledTransitionController {
 
   ///Common AnimationController to control every transition (that is not null) without duration
