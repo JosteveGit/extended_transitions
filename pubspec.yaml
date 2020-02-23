@@ -1,7 +1,7 @@
 name: coupled_transition
 description: Coupled Transition in flutter allows ypu perform more than one transition on a widget with lesser lines of code
 version: 0.0.1
-author: Josteve Adekanbi
+author: JosteveGit
 homepage: https://github.com/JosteveGit/coupled_transition_widget
 
 environment:
