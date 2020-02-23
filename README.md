@@ -16,10 +16,13 @@ Extended Transition is an open source package with new transitions for animation
 A basic demo
 ```dart
 import 'package:flutter/material.dart';
-import 'package:open_source_projects/coulped_transition.dart';
-import 'package:open_source_projects/transition.dart';
 
-import 'coupled_transition_controller.dart';
+import 'package:extended_transitions/coupled_transition/coupled_transition.dart';
+import 'package:extended_transitions/coupled_transition/coupled_transition_controller.dart';
+import 'package:extended_transitions/coupled_transition/transition.dart';
+
+
+
 
 void main() => runApp(MyApp());
 
@@ -90,6 +93,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
 
 ```
 
