@@ -1,6 +1,6 @@
-# flutter_package
+# coupled_transition
 
-A new Flutter package.
+Coupled Transition
 
 ## Getting Started
 

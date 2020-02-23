@@ -1,8 +1,7 @@
-name: coupled_transition
-description: Coupled Transition in flutter allows ypu perform more than one transition on a widget with lesser lines of code
+name: extented_transitions
+description: A package with new transitions for animations
 version: 0.0.1
-author: JosteveGit
-homepage: https://github.com/JosteveGit/coupled_transition_widget
+homepage: https://github.com/JosteveGit/extented_transitions
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

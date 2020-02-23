@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'transition.dart';
 import 'coupled_transition_controller.dart';
+import 'transition.dart';
 
 
 /// Can animate the scale, rotation, opacity, position relative to its normal position, its won size and clips and its [Align.alignment] property.
