@@ -18,7 +18,7 @@ class CoupledTransition extends StatefulWidget {
     this.useCommonCurve = false,
     this.commonCurve = Curves.ease,
     this.commonDuration,
-    this.build(CoupledTransitionController trigger),
+    @required this.build(CoupledTransitionController trigger),
     this.fadeAnimation,
     this.scaleAnimation,
     this.sizeAnimation,
