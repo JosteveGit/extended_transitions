@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'coupled_transition_controller.dart';
 import 'transition.dart';
-
 
 /// Can animate the scale, rotation, opacity, position relative to its normal position, its won size and clips and its [Align.alignment] property.
 
@@ -25,7 +25,9 @@ class CoupledTransition extends StatefulWidget {
     this.slideAnimation,
     this.rotationAnimation,
     this.alignmentAnimation,
-  }): assert(child !=null),super(key: key);
+  })  : assert(child != null),
+        assert(build != null),
+        super(key: key);
 
   /// The widget below this widget in the tree
   ///
@@ -139,7 +141,6 @@ class CoupledTransition extends StatefulWidget {
 class _CoupledTransitionState extends State<CoupledTransition>
     with TickerProviderStateMixin
     implements CoupledTransitionController {
-
   ///Common AnimationController to control every transition (that is not null) without duration
   AnimationController commonController;
 
@@ -168,7 +169,8 @@ class _CoupledTransitionState extends State<CoupledTransition>
     ///Initializing the [commonController] is [widget.useCommonController] is true
     if (widget.useCommonController) {
       assert(widget.commonDuration != null);
-      commonController = AnimationController(vsync: this, duration: widget.commonDuration);
+      commonController =
+          AnimationController(vsync: this, duration: widget.commonDuration);
     }
 
     initializeAllControllers();
@@ -237,8 +239,10 @@ class _CoupledTransitionState extends State<CoupledTransition>
   ///
   /// If none of the above assumptions is true then the controller passed drives the tween
   getAnim<T>(AnimationController controller, Transition transition) {
-    AnimationController newController = AnimationController(vsync: this, duration: Duration(seconds: 0));
-    if (transition == null || (controller==null && !widget.useCommonController)) {
+    AnimationController newController =
+        AnimationController(vsync: this, duration: Duration(seconds: 0));
+    if (transition == null ||
+        (controller == null && !widget.useCommonController)) {
       if (T == double) {
         return newController.drive(Tween<double>(begin: 1, end: 1));
       } else if (T == Offset) {
@@ -248,8 +252,7 @@ class _CoupledTransitionState extends State<CoupledTransition>
         return newController.drive(Tween<AlignmentGeometry>(
             begin: Alignment.center, end: Alignment.center));
       }
-    }
-    else if (widget.useCommonController && validate(transition)) {
+    } else if (widget.useCommonController && validate(transition)) {
       if (transition.tween != null) {
         return commonController.drive(transition.tween
             .chain(CurveTween(curve: getCurve(transition.curve))));
@@ -266,8 +269,8 @@ class _CoupledTransitionState extends State<CoupledTransition>
       }
     } else {
       assert(transition.tween != null);
-      return controller.drive(
-          transition.tween.chain(CurveTween(curve: getCurve(transition.curve))));
+      return controller.drive(transition.tween
+          .chain(CurveTween(curve: getCurve(transition.curve))));
     }
   }
 
@@ -318,7 +321,6 @@ class _CoupledTransitionState extends State<CoupledTransition>
     return widget.commonCurve;
   }
 
-
   /// Function to start all nonnull controllers simultaneously
   @override
   void startAll() {
@@ -367,7 +369,6 @@ class _CoupledTransitionState extends State<CoupledTransition>
     return slideTransitionController;
   }
 
-
   /// Function to repeat all controllers simultaneously.
   /// If reverse is true then repetition occurs in the reverse manner
   @override
@@ -391,48 +392,46 @@ class _CoupledTransitionState extends State<CoupledTransition>
     reverseController(rotationTransitionController);
   }
 
-
   /// Function to stop all controllers simultaneously
   @override
   void stopAll() {
-   stopController(commonController);
-   stopController(scaleTransitionController);
-   stopController(fadeTransitionController);
-   stopController(sizeTransitionController);
-   stopController(slideTransitionController);
-   stopController(rotationTransitionController);
+    stopController(commonController);
+    stopController(scaleTransitionController);
+    stopController(fadeTransitionController);
+    stopController(sizeTransitionController);
+    stopController(slideTransitionController);
+    stopController(rotationTransitionController);
   }
 
-  void repeatController(AnimationController controller, bool reverse){
-    if(controller != null){
-      try{
+  void repeatController(AnimationController controller, bool reverse) {
+    if (controller != null) {
+      try {
         controller.repeat(reverse: reverse);
-      }catch(e){
+      } catch (e) {
         //
       }
     }
   }
 
-  void stopController(AnimationController controller){
-    if(controller !=null){
-      try{
+  void stopController(AnimationController controller) {
+    if (controller != null) {
+      try {
         controller.stop();
-      }catch(e){
+      } catch (e) {
         //
       }
     }
   }
 
-  void reverseController(AnimationController controller){
-    if(controller !=null){
-      try{
+  void reverseController(AnimationController controller) {
+    if (controller != null) {
+      try {
         controller.reverse();
-      }catch(E){
+      } catch (E) {
         //
       }
     }
   }
-
 
   void startController(AnimationController controller) {
     if (controller != null) {
@@ -444,6 +443,5 @@ class _CoupledTransitionState extends State<CoupledTransition>
         //
       }
     }
-
   }
 }
